@@ -1,0 +1,96 @@
+{% extends "game/base3.html" %}
+{% block title %}Tamagochi: Single Game Instruction{% endblock %}
+{% load static %}
+<!----------------------Single Game Instrution page----------------------------->
+{% block singleIns %}
+    <div class="row">
+    <div class="col-md-1">&nbsp;</div>
+    <div class="col-md-4">
+            <div class="instruction">
+                <div class="row">
+                    <div class="col-md-1">&nbsp;</div>
+                    <div class="col-md-8">
+                        <h3 class="text-center">Flappy Tamagochi</h3>
+                        <h4>How to play</h4>
+                        <p>Press space to be in the middle of pipes</p>
+                        <p>Fly as far as you can!</p>
+                        <a href="{% url 'flappy' %}"><button class="btn-success text-center hvr-buzz"><h5>Start!</h5></button></a>
+                        </div>
+                    <div class="col-md-3">
+                        <img src="{% static 'images/showcase1.png' %}" class="showcase">
+                    </div>
+                </div>
+            </div>
+        <div class="rank">
+            <h3 class="rankFont">RANK:</h3>
+                <div class='row'>
+                    <div class='wareList'>
+                    {% if tama1 is None %}
+                <h4 class="text-danger">{{ msg }}</h4>
+                    {% else %}
+		        <div class='col-md-4' >
+                    {% for tama in tama1 %}
+		                <img src='{% static tama.apperance.url %}' class='friendItem1 hvr-bounce-in' >
+                        {% endfor %}
+		        </div>
+		        <div class='col-md-6'>
+                    {% for tama in tama1 %}
+		            <p class='wareText'>Name: {{ tama.name }}</p><p class='wareTextRed'>Best Score: {{ tama.score1 }}</p>
+                    {% endfor %}
+                </div>
+                    {% endif %}
+                    </div>
+		</div>
+    </div>
+    </div>
+        <div class="col-md-1">&nbsp;</div>
+        <div class="col-md-4">
+            <div class="instruction">
+                <div class="row">
+                    <div class="col-md-1">&nbsp;</div>
+                       <h4 class="text-danger">{{ error }}</h4>
+                    <div class="col-md-8">
+                <h3 class="text-center">Catch the Tamagochi</h3>
+                        <h4>How to play</h4>
+                        <p>Your Tamagochi is naughty!</p>
+                        <p>And he/she bet you can't catch him/her!</p>
+                        <button class="btn-success text-center hvr-buzz" onclick="checkEnergy({{ energy }})"><h5>Start!</h5></button>
+                        </div>
+                    <div class="col-md-3">
+                        <img src="{% static 'images/hitmouse.png' %}" class="showcase">
+                    </div>
+                </div>
+            </div>
+        <div class="rank">
+            <h3 class="rankFont">RANK:</h3>
+                <div class='row'>
+                    <div class='wareList'>
+                    {% if tama2 is None %}
+                <h4 class="text-danger">{{ msg }}</h4>
+                    {% else %}
+		        <div class='col-md-4' >
+                    {% for tama in tama2 %}
+		                <img src='{% static tama.apperance.url %}' class='friendItem1 hvr-bounce-in' >
+                    {% endfor %}
+		        </div>
+		        <div class='col-md-6'>
+                    {% for tama in tama2 %}
+		            <p class='wareText'>Name: {{ tama.name }}</p><p class='wareTextRed'>Best Score: {{ tama.score2 }}</p>
+                    {% endfor %}
+                </div>
+                    {% endif %}
+                    </div>
+		</div>
+    </div>
+    </div>
+    </div><br>
+    <script language="javascript">
+        function checkEnergy(data) {
+            if( data < 20 ){
+                alert("Sorry! Your Pet is too tired to start the game! (energy < 20)")
+            }else{
+                window.location.href='{% url 'hitMouse' %}'
+            }
+        }
+    </script>
+{% endblock %}

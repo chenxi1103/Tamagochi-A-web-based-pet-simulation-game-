@@ -1,0 +1,71 @@
+{% extends "event/base2.html" %}
+{% block title %}Tamagochi: Hospital{% endblock %}
+{% load static %}
+{% block home %}{% endblock %}
+{% block navbar %}{% endblock %}
+{% block home-content %}{% endblock %}
+<!----------------------------------Hospital---------------------------------------->
+{% block hospital %}
+<div class="row">
+    <div class="col-md-1">&nbsp;</div>
+    <div class="col-md-4">
+        <h4>Shopping Cart</h4>
+        <p id="errormsg"></p>
+        <div class="shoppingCartListTitle">
+                &nbsp;<p class="shoppingCartTitleText">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Total:  $<span id="total_price">0</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Balance:$ <span id="wallet">{{ pet.wallet }}</span></p>
+            </div>
+        <div class="shoppingCart">
+            <!-------One shopping cart list--------->
+            <span id="shoppingCartList">
+            </span>
+        </div>
+         <button class="btnorder hvr-float-shadow text-center" id="order"><h4>ORDER</h4></button>
+    </div>
+    <div class="col-md-5">
+        <h4>&nbsp;</h4>
+        <div class="shopping">
+        {% for item in medicine %}
+            <div class="hospitalList">
+                <div class="row">
+                    <div class="col-md-2">
+                        <img src="{% static item.image.url %}" class="hospitalItem hvr-bounce-in">
+                    </div>
+                    <div class="col-md-4">
+                        <p class="wareText">{{ item.name }}</p>
+                        {% if item.health %}
+                        <p class="wareTextRed">+ Health {{ item.health }}</p>
+                        {% endif %}
+                        {% if item.energy %}
+                        <p class="wareTextRed">+ Energy {{ item.energy }}</p>
+                        {% endif %}
+                        {% if item.happiness %}
+                        <p class="wareTextRed">+ Happiness {{ item.happiness }}</p>
+                        {% endif %}
+                    </div>
+                    <div class="col-md-2">
+                        <h4 class="price">$ {{ item.price }}</h4>
+                    </div>
+                    <div class="col-md-3">
+                        <button class="addbtn glyphicon glyphicon-plus hvr-bounce-in" id="{{ item.name }}"></button>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+        </div>
+    </div>
+    <!--------navigation bar------------>
+    <div class="col-md-2">
+        <div class="row">
+            <div class="col-md-1">&nbsp;</div>
+            <div class="col-md-4">
+                <h4>&nbsp;</h4>
+                <a href="{% url 'warehouse' %}"><button class="btnmap hvr-float-shadow"><h4>STATUS</h4></button></a><br><br>
+                <a href="{% url 'hospital' %}"> <button class="btnmap hvr-float-shadow"><h4>MEDICINE</h4></button></a><br><br>
+                <a href="{% url 'previous' %}"> <button class="btnmap hvr-float-shadow"><h4>PREVIOUS</h4></button></a><br><br><br><br>
+            </div>
+        </div>
+    </div>
+
+</div><br>
+<script src="/static/js/store.js" type="text/javascript"></script>
+{% endblock %}

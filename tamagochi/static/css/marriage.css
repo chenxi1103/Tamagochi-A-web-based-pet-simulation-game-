@@ -1,0 +1,138 @@
+body{
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-family: Abel
+}
+h1 { font-family: "Amatic SC"; font-size: 86px; font-style: normal; font-variant: normal; font-weight: 700; line-height: 26.4px; }
+h3 { font-family: "Indie Flower"; font-size: 20px; font-style: normal; font-variant: normal; font-weight: 700; line-height: 15.4px; }
+p { font-family: Abel; font-size: 16px; font-style: normal; font-variant: normal; font-weight: 400; line-height: 20px; }
+h2{ font-family: "Indie Flower"; color: white;font-size: 24px; font-style: normal; font-variant: normal; font-weight: 700; line-height: 15.4px; }
+h4{font-family: Abel; font-size: 20px; font-style: normal; font-variant: normal; font-weight: 700; line-height: 15.4px;}
+h5{font-family: Abel; font-size: 16px; font-style: normal; font-variant: normal; font-weight: 700; line-height: 15.4px;}
+
+header{
+    height: 180px;
+    width: auto;
+    background: linear-gradient(to right, #beecf6, #f0f0f0);
+    opacity: 0.93;
+}
+.myMod{
+    border-radius: 30px;
+    border-width: 5px;
+    overflow-x:auto;
+    overflow-y:auto;
+    background: #ffe5e5;
+}
+.btnmap{
+    font-size: 24px;
+    height: 50px;
+    width: 120px;
+    border-radius: 20px;
+    background: linear-gradient(to right, #ffffff, #f0f0f0);
+    border: solid;
+    text-decoration: none;
+}
+.lovewall{
+    border-radius: 22px;
+    height: 500px;
+    background: #f7e6e6ed;
+    border:dashed;
+    border-color: red;
+    border-width: 5px;
+    overflow-x:hidden;
+    overflow-y:auto;
+    margin:20px 0px 20px 40px;
+}
+.postItem{
+    border-radius: 22px;
+    height: 90px;
+    background: #f9b2cc;
+    margin: 20px 20px 0px 20px;
+}
+.author{
+    width: 70px;
+    height: 70px;
+    margin: 9px 0px 5px 10px;
+}
+.thumbsupbtn{
+    height: 28px;
+    width: 65px;
+    border-radius: 24px;
+    background: linear-gradient(to right, #ffffff, #f0f0f0);
+    border: solid;
+    text-decoration: none;
+    margin: 50px 0px 0px 0px;
+}
+.postLove{
+    font-family: Abel;
+    font-size: 18px;
+    border-radius: 22px;
+    height: 150px;
+    background: #f7e6e6ed;
+    border:dashed;
+    border-color: #00c2ff94;
+    border-width: 5px;
+    overflow-x:hidden;
+    overflow-y:auto;
+}
+.postbtn{
+    font-family: Abel;
+    font-size: 20px;
+    height: 40px;
+    width: 70px;
+    border-radius: 18px;
+    background: linear-gradient(to right, #ffffff, #f0f0f0);
+    border: solid;
+    text-decoration: none;
+    margin: 5px 0px 0px 360px;
+}
+.postTitle{
+    font-family: Abel;
+    font-size: 24px;
+    margin: 20px 0px 10px 0px;
+}
+.ring{
+    width: 100px;
+    height: 100px;
+    margin: 15px 0px 0px 35px;
+}
+.petself{
+    height: 230px;
+    width: 200px;
+    margin: 0px 0px 0px 27px;
+}
+.purposebtn{
+    font-family: Abel;
+    font-size: 20px;
+    height: 40px;
+    width: 150px;
+    border-radius: 18px;
+    background: linear-gradient(to right, #ffffff, #f0f0f0);
+    border: solid;
+    text-decoration: none;
+    margin: 30px 0px 0px 40px;
+}
+.wareText{
+    margin: 15px 0px 0px 8px;
+}
+.wareTextRed{
+    margin: 8px 0px 0px 5px;
+    color: red;
+    font-style: italic;
+}
+.btnPWD{
+    font-family: Abel;
+    font-size: 16px;
+    height: 35px;
+    width: 70px;
+    border-radius: 14px;
+    background: linear-gradient(to right, #ffffff, #f0f0f0);
+    border: solid;
+    text-decoration: none;
+    margin: 0px 0px 0px 15px;
+}
+.friendItem{
+    width: 280px;
+    height: 300px;
+    margin: 5px 5px 0px 0px;
+}

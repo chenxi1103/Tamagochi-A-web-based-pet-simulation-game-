@@ -1,0 +1,87 @@
+{% extends "game/base3.html" %}
+{% block title %}Tamagochi: Single Game Instruction{% endblock %}
+{% load static %}
+{% block message %}{% endblock %}
+{% block singlegame2 %}
+    <!-----Game CSS------->
+    <link href="{% static 'css/hitmouse.css' %}" rel="stylesheet">
+    <style>
+    table:hover {
+        cursor: url('{% static 'images/hummer.png'%}'),auto;
+    }
+    </style>
+    <div class="content" id="content">
+			<input type="button" class="hitmousebtn" value="Start the Game" onclick="GameStart()">
+			<input type="button" class="hitmousebtn" value="End the Game" onclick="GameOver()">
+        <a href="{% url 'singleIns' %}"><input type="button" class="hitmousebtn" value="Go Back Home" /></a>
+			<form name="form1">
+				<label><h4 class="hitmousefont">SCORE：</h4></label>
+				<input type="text" name="score" class="hitmousescore" size="5">
+				<label><h4 class="hitmousefont">HIT RATE：</h4></label>
+				<input type="text" name="success" class="hitmousescore" size="10">
+				<label><h4 class="hitmousefont">TIME COUNTDOWN：</h4></label>
+				<input type="text" name="remtime" class="hitmousescore"size="5">
+			</form><br>
+			<table>
+				<tr>
+					<td id="td[0]" onclick="hit(0)" style="background-color: lightskyblue"></td>
+					<td id="td[1]" onclick="hit(1)"></td>
+					<td id="td[2]" onclick="hit(2)" style="background-color: lightskyblue"></td>
+					<td id="td[3]" onclick="hit(3)"></td>
+					<td id="td[4]" onclick="hit(4)" style="background-color: lightskyblue"></td>
+				</tr>
+				<tr>
+					<td id="td[5]" onclick="hit(5)"></td>
+					<td id="td[6]" onclick="hit(6)" style="background-color: lightskyblue"></td>
+					<td id="td[7]" onclick="hit(7)"></td>
+					<td id="td[8]" onclick="hit(8)" style="background-color: lightskyblue"></td>
+					<td id="td[9]" onclick="hit(9)"></td>
+				</tr>
+				<tr>
+					<td id="td[10]" onclick="hit(10)" style="background-color: lightskyblue"></td>
+					<td id="td[11]" onclick="hit(11)"></td>
+					<td id="td[12]" onclick="hit(12)" style="background-color: lightskyblue"></td>
+					<td id="td[13]" onclick="hit(13)"></td>
+					<td id="td[14]" onclick="hit(14)" style="background-color: lightskyblue"></td>
+				</tr>
+				<tr>
+					<td id="td[15]" onclick="hit(15)"></td>
+					<td id="td[16]" onclick="hit(16)" style="background-color: lightskyblue"></td>
+					<td id="td[17]" onclick="hit(17)"></td>
+					<td id="td[18]" onclick="hit(18)" style="background-color: lightskyblue"></td>
+					<td id="td[19]" onclick="hit(19)"></td>
+				</tr>
+				<tr>
+					<td id="td[20]" onclick="hit(20)" style="background-color: lightskyblue"></td>
+					<td id="td[21]" onclick="hit(21)"></td>
+					<td id="td[22]" onclick="hit(22)" style="background-color: lightskyblue"></td>
+					<td id="td[23]" onclick="hit(23)"></td>
+					<td id="td[24]" onclick="hit(24)" style="background-color: lightskyblue"></td>
+				</tr>
+			</table>
+		</div><br><br>
+    <script src="{% static 'js/hitMouse.js' %}"></script>
+        <script language="javascript">
+    			function show(){
+				if(playing)
+				{
+					var current = Math.floor(Math.random()*25);
+					document.getElementById("td["+current+"]").innerHTML = '<img src="{% static pet.apperance.url %}" class="hitmouseshow">';
+					setTimeout("document.getElementById('td["+current+"]').innerHTML=''",3000);
+				}
+			}
+
+			function GameStart(){
+                var curr_energy = {{ pet.energy }};
+                    if(curr_energy > 20) {
+                        playing = true;
+                        interId = setInterval("show()", 800);
+                        document.form1.score.value = score;
+                        document.form1.success.value = success;
+                        timeShow();
+                    }else{
+                        alert("Pet Energy is too low to play the game!");
+                    }
+			}
+    </script>
+{% endblock %}

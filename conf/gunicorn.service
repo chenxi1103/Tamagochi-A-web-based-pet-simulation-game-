@@ -1,0 +1,13 @@
+[Unit]
+Description=gunicorn daemon
+After=network.target
+
+[Service]
+User=root
+Group=www-data
+WorkingDirectory=/var/www/tamagochi.com
+ExecStart=/home/ubuntu/venv/bin/gunicorn --log-file /var/log/gunicorn/log.log --error-logfile /var/log/gunicorn/error.log --workers 10 --bind 0.0.0.0:8000 web.wsgi:application
+EnvironmentFile=/var/www/tamagochi.com/envvar
+
+[Install]
+WantedBy=multi-user.target

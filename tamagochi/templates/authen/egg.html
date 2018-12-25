@@ -1,0 +1,42 @@
+{% extends 'authen/base1.html' %}
+{% load static %}
+{% block header1 %}{% endblock %}
+{% block title %}Tamagochi: Egg{% endblock %}
+{% block message %}{% endblock %}
+<!------------------------------ Egg ---------------------------------->
+{% block egg %}
+    <div class="row">
+    <div class=".col-md-6 .offset-md-3">
+        <h1></h1><br><br>
+        <h5 class="egg text-center" style="color: red;">{{ msg }}</h5><br>
+        <h5 class="egg text-center">Now you have a pet egg</h5><br>
+        <h5 class="egg text-center">Name it as you like!</h5>
+            </div>
+        <p class="text-center">
+        <img src="{% static 'images/egg.jpeg' %}" id="eggImg" class="eggimg hvr-buzz" onclick="changeIMG()"
+        style=""></p><br>
+        <form action="{% url 'get_egg' %}" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+
+            {% if errors %}
+                <h5 style="color:red; text-align: center">
+                {{errors}}
+                </h5>
+            {% endif %}
+
+            <p class="text-center">
+                <input class="nameInput" name = 'tname' type="text" placeholder="&nbsp;Name"></p><br>
+        <p class="text-center">
+            <button class="go hvr-float-shadow nameInput" type="submit"><h4>GO!</h4></button></p><br><br>
+        </form>
+    </div>
+
+<script language='JavaScript'>
+  $('form').submit(function() {
+  $(this).find("button[type='submit']").prop('disabled',true);
+  });
+</script>
+
+{% endblock %}
+{% block editForm %}
+{% endblock %}

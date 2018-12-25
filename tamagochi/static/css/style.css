@@ -1,0 +1,463 @@
+body{
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-family: Abel
+}
+h1 { font-family: "Amatic SC"; font-size: 86px; font-style: normal; font-variant: normal; font-weight: 700; line-height: 26.4px; }
+h3 { font-family: "Indie Flower"; font-size: 20px; font-style: normal; font-variant: normal; font-weight: 700; line-height: 15.4px; }
+p { font-family: Abel; font-size: 16px; font-style: normal; font-variant: normal; font-weight: 400; line-height: 20px; }
+h2{ font-family: "Indie Flower"; color: white;font-size: 24px; font-style: normal; font-variant: normal; font-weight: 700; line-height: 15.4px; }
+h4{font-family: Abel; font-size: 20px; font-style: normal; font-variant: normal; font-weight: 700; line-height: 15.4px;}
+h5{font-family: Abel; font-size: 16px; font-style: normal; font-variant: normal; font-weight: 700; line-height: 15.4px;}
+.email{
+    border-radius: 20px;
+    border-width: 5px;
+    width: 600px;
+    height: 170px;
+}
+.emailConfirm{
+    border-radius: 20px;
+    border-width: 5px;
+    width: 500px;
+    height: 280px;
+}
+.btnPWD{
+    font-family: Abel;
+    font-size: 16px;
+    height: 40px;
+    width: 80px;
+    border-radius: 16px;
+    background: linear-gradient(to right, #ffffff, #f0f0f0);
+    border: solid;
+    text-decoration: none;
+    margin: 15px 5px 0px 10px;
+}
+
+.footMargin{
+    margin: -3px 0px 0px 0px;
+}
+.myMod{
+    border-radius: 30px;
+    border-width: 5px;
+    overflow-x:hidden;
+    overflow-y:auto;
+    background: #ffe5e5;
+}
+.apart{
+    margin: 0px 0px 0px 40px;
+}
+
+.egg{
+    font-family: Abel; font-size: 28px; font-style: normal; font-variant: normal; font-weight: 700; line-height: 15.4px;
+}
+.eggimg{
+    width: 200px;
+    height: 250px;
+    margin: 50px 0px 0px 0px;
+}
+.faUser{
+    font-family: Abel;
+    font-size: 15px;
+    font-weight: bold;
+}
+.btnlogin{
+    font-size: 24px;
+    height: 45px;
+    width: 100px;
+    border-radius: 6px;
+    background: linear-gradient(to right, #ee9ce2, #f0f0f0);
+    box-shadow: 3px 0 3px grey;
+}
+.nameInput{
+    width: 180px;
+    height: 40px;
+    border-radius: 22px;
+    font-family: Abel; font-size: 22px; font-style: normal; font-variant: normal; font-weight: 700; line-height: 15.4px;
+}
+.go{
+    font-size: 20px;
+    height: 40px;
+    width: 100px;
+    border-radius: 20px;
+    background: linear-gradient(to right, #ffffff, #f0f0f0);
+    border: solid;
+}
+.marginfix{
+    margin: 0px 0px 0px 50px;
+}
+
+.btnsignUp{
+    font-size: 24px;
+    height: 45px;
+    width: 100px;
+    border-radius: 6px;
+    background: linear-gradient(to right, #fff8b8, #f0f0f0);
+    box-shadow: 3px 0 3px grey;
+}
+.btnhome{
+    font-size: 24px;
+    height: 50px;
+    width: auto;
+    border-radius: 15px;
+    background: #fb97b9;
+    box-shadow: 3px 0 3px grey;
+    margin: 0px 0px 30px 0px;
+}
+
+.btnmap{
+    font-family: Abel;
+    font-size: 20px;
+    height: 50px;
+    width: 120px;
+    border-radius: 20px;
+    background: linear-gradient(to right, #ffffff, #f0f0f0);
+    border: solid;
+    text-decoration: none;
+    margin: 15px 5px 0px 10px;
+}
+.btnchange{
+    font-family: Abel;
+    font-size: 20px;
+    height: 50px;
+    width: 180px;
+    border-radius: 20px;
+    background: linear-gradient(to right, #ffffff, #f0f0f0);
+    border: solid;
+    text-decoration: none;
+    margin: 15px 0px 0px 10px;
+}
+
+.previous{
+    height: 500px;
+    background: #ffffff;
+    overflow-x:auto;
+    overflow-y:auto;
+}
+.prevList{
+    width: 254px;
+    height: 460px;
+    position: relative;
+    float: left;
+    margin: 20px 0px 0px 30px;
+}
+.prevImg{
+    width: 250px;
+    height: 280px;
+}
+
+.btnorder{
+    font-size: 10px;
+    height: 40px;
+    width: 90px;
+    border-radius: 14px;
+    background: linear-gradient(to right, #ffffff, #f0f0f0);
+    border: solid;
+    text-decoration: none;
+    margin: 15px;
+}
+
+.signUpForm{
+    border-radius: 22px;
+    width: 450px;
+    background: linear-gradient(to right, #bdbdbd, #f0f0f0);
+    opacity: 0.7;
+}
+
+.loginForm{
+    border-radius: 22px;
+    width: 465px;
+    background: linear-gradient(to right, #d0ecf6, #f0f0f0);
+    opacity: 0.7;
+}
+
+.inputField{
+    width: 150px;
+    height: 30px;
+    border-radius: 22px;
+}
+.container{
+    text-align: center;
+    float: none;
+}
+header{
+    height: 180px;
+    width: auto;
+    background: linear-gradient(to right, #beecf6, #f0f0f0);
+    opacity: 0.5;
+}
+.centerFix{
+    text-align:center;
+    width:33%;
+    height:33%;
+    margin:0px;
+    float:left;
+}
+.centerFix2{
+    text-align:center;
+    width:50%;
+    height:50%;
+    margin:0px;
+    float:left;
+}
+.imgfix{
+    width: 200px;
+    height: 270px;
+}
+.imgfix2{
+    width: 300px;
+    height: 270px;
+}
+.imgfix3{
+    width: 200px;
+    height: 230px;
+}
+.imgfix4{
+    width: 280px;
+    height: 250px;
+}
+.tamafix{
+    width: 230px;
+    height: 260px;
+}
+.tamafix1{
+    width: 200px;
+    height: 240px;
+    margin: 10px 0px 5px 55px;
+}
+.btnFix{
+    margin: 0px 0px 0px 120px;
+}
+
+.profile{
+    border-radius: 22px;
+    width: 330px;
+    height: 500px;
+    background: mistyrose;
+    border: dashed;
+}
+.profileDetail{
+    border-radius: 22px;
+    width: 530px;
+    height: 300px;
+    background: #d9f0f6;
+    border: dashed;
+}
+.profileDetail2{
+    border-radius: 22px;
+    width: 330px;
+    height: 240px;
+    background: #d9f0f6;
+    border: dashed;
+}
+.progress{
+    border: solid;
+    width: 250px;
+    height: 30px;
+}
+.earnMoney{
+    border-radius: 22px;
+    width: 520px;
+    height: 340px;
+    background: #f9e38f;
+    border: dashed;
+    margin: 0px 0px 0px 30px;
+}
+.moneyMargin{
+    margin: 70px 0px 0px 70px;
+}
+.balanceMargin{
+    margin: 120px 0px 0px 20px;
+}
+.earnMoneybtn{
+    margin: 30px 0px 0px 75px;
+}
+.warehouse{
+    border-radius: 22px;
+    width: 520px;
+    height: 760px;
+    background: #ccf6c7;
+    border: dashed;
+    overflow-x:hidden;
+    overflow-y:auto;
+    margin:0px 0px 0px 40px;
+}
+.wareList{
+    border-radius: 22px;
+    width: 455px;
+    height: 80px;
+    background: #f8f8f8;
+    margin: 20px 0px 0px 35px;
+}
+.wareItem{
+    width: 52px;
+    height: 55px;
+    margin: 11px 0px 0px 20px;
+}
+.shoppingItem{
+    width: 62px;
+    height: 65px;
+    margin:5px 0px 0px 10px;
+}
+.shoppingCartList{
+    border-radius: 22px;
+    width: 355px;
+    height: 80px;
+    background: #b2edf9;
+    margin: 20px 0px 0px 15px;
+}
+.shoppingCartListTitle{
+    border-radius: 18px;
+    width: 405px;
+    height: 60px;
+    background: #fafafa;
+    margin: 10px 0px 20px -10px;
+    box-shadow: 3px 0 3px grey;
+}
+.shoppingCartTitleText{
+    font-style: italic;
+    font-size: 18px;
+    margin: 0px 0px 0px 5px;
+}
+.shoppingCartTitlePrice{
+    margin: 23px 0px 0px 0px;
+}
+.shoppingCart{
+    border-radius: 22px;
+    width: 400px;
+    height: 370px;
+    background: #ffffff;
+    border: dotted;
+    border-color: #98e1f6;
+    border-width: 8px;
+    overflow-x:hidden;
+    overflow-y:auto;
+}
+.shopping{
+    border-radius: 22px;
+    width: 530px;
+    height: 500px;
+    background: #ffffff;
+    border: dotted;
+    border-color: #f9e38f;
+    border-width: 8px;
+    overflow-x:hidden;
+    overflow-y:auto;
+}
+.shoppingList{
+    border-radius: 22px;
+    width: 440px;
+    height: 80px;
+    background: #f9e38f;
+    margin: 20px 0px 0px 35px;
+}
+.hospitalList{
+    border-radius: 22px;
+    width: 440px;
+    height: 80px;
+    background: #dac2fb;
+    margin: 20px 0px 0px 35px;
+
+}
+.hospitalItem{
+    width: 42px;
+    height: 45px;
+    margin:18px 0px 0px 15px;
+}
+.price{
+    margin: 32px 0px 0px 0px;
+}
+.errorimg{
+    margin: 0px 0px 0px -15px;
+    width: 250px;
+    height: 250px;
+}
+.friendField{
+    border-radius: 22px;
+    width: 500px;
+    height: 715px;
+    background: #e1c7f6;
+    border: dashed;
+    margin: 0px 0px 0px 40px;
+}
+.friendItem{
+    width: 85px;
+    height: 100px;
+    margin: -3px 50px 5px 30px;
+}
+.friendItem1{
+    width: 65px;
+    height: 75px;
+    margin: -10px 0px 5px 20px;
+}
+.friendItem2{
+    width: 65px;
+    height: 75px;
+    margin: 0px 0px 5px 15px;
+}
+
+.waitlistbtn{
+    font-family: Abel;
+    font-size: 14px;
+    height: 27px;
+    width: 60px;
+    border-radius: 10px;
+    background: linear-gradient(to right, #d3e1ec, #e6ffe9);
+    border: black;
+    text-decoration: none;
+    margin: 15px 10px -20px 20px;
+
+}
+.wareText{
+    margin: 15px 0px 0px 8px;
+}
+.wareTextRed{
+    margin: 8px 0px 0px 5px;
+    color: red;
+    font-style: italic;
+}
+.addbtn{
+    margin: 23px 0px 0px 0px;
+    widows: 20px;
+    height: 30px;
+    background: #8bc34a;
+    border-radius: 8px;
+}
+.minusbtn{
+    margin: 23px 0px 0px 0px;
+    widows: 20px;
+    height: 30px;
+    background: deepskyblue;
+    border-radius: 20px;
+}
+.glyphicon{
+    color: white;
+    width: 30px;
+}
+.massage{
+    color:greenyellow;
+    font-size: 40px;
+    margin: 20px 0px 0px 0px;
+}
+.addFriend{
+    margin: 20px 0px 0px 20px;
+}
+.btnfriend{
+    height: 30px;
+    width: 140px;
+    border-radius: 24px;
+    background: linear-gradient(to right, #ffffff, #f0f0f0);
+    border: solid;
+    text-decoration: none;
+}
+.error{
+    color: red;
+    font-size: 18px;
+    font-style: italic;
+    margin: 20px;
+}
+
+.weather{
+    margin: 0px 0px 0px 0px;
+    width: 90px;
+    height: 90px
+}

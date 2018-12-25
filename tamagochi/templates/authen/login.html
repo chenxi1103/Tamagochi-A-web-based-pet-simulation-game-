@@ -1,0 +1,52 @@
+{% extends 'authen/base1.html' %}
+{% load static %}
+{% block title %}Tamagochi: Login{% endblock %}
+{% block header1 %}{% endblock %}
+{% block message %}{% endblock %}
+<!------------------------------ Login ---------------------------------->
+{% block login %}
+    <div class="w3-display-topmiddle">
+    <h1>&nbsp;</h1><br>
+    <h1 class="w3-animate-left hvr-hang">T A M A G O C H I</h1><br>
+    <h1>&nbsp;</h1>
+</div>
+<form action="{% url 'login' %}" method ='POST'>
+{% csrf_token %}
+<div class="w3-display-middle">
+    <h1>&nbsp;</h1><br>
+    <div class="loginForm container">
+        <p>&nbsp;</p>
+    {% if errors %}
+              <h5 style="color:red; text-align: center">
+              {{errors}}
+              </h5>
+              {% endif %}
+        <div class="row">
+            <div class="col-md-2">&nbsp;</div>
+            <div class="col-md-4">
+              {% for error in login_form.non_field_errors %}
+              <h5 class="alert-danger">
+              {{ error }}
+              </h5>
+              {% endfor %}
+                <table>
+                    <tr>
+                        <td><h3 class="text-right">username:&nbsp;&nbsp;&nbsp;</h3></td>
+                        <td>{{form.username}}<br></td>
+                    </tr><tr><td>&nbsp;</td></tr>
+                    <tr>&nbsp;</tr>
+                    <tr>
+                        <td><h3 class="text-right">Password:&nbsp;&nbsp;&nbsp;</h3></td>
+                        <td>{{form.password}}<br></td>
+                    </tr><tr><td>&nbsp;</td></tr>
+                </table>
+            </div>
+            <div class="col-md-1">&nbsp;</div>
+        </div>
+        <button class="btnlogin hvr-wobble-to-top-right" type="submit">LOG IN</button><br><br>
+        <p><a href="{% url 'signup' %}">New user? </a>&nbsp;
+            <a href="{% url 'reset_password' %}">Forget Password?</a></p>
+    </div>
+</div>
+</form>
+{% endblock %}

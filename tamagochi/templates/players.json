@@ -1,0 +1,8 @@
+{"players":[
+  {% for player in players %}
+  {%spaceless%}
+  {% include 'player.json' %}
+  {%endspaceless%}
+  {% if not forloop.last %},
+  {% endif %}
+  {% endfor %}]}

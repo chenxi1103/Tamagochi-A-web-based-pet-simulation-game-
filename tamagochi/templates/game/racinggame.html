@@ -1,0 +1,78 @@
+{% extends "game/base3.html" %}
+{% block title %}Tamagochi: Single Game Instruction{% endblock %}
+{% load static %}
+{% block message %}{% endblock %}
+
+{% block racinggame %}
+    <h3 class="roomFont">Racing Room {{ room.id }}</h3>
+    <h4 class="roomFont1">Click the SPACE to Run!!!</h4><br>
+    <input type="hidden" id="room" name="room" value="{{ room.id }}">
+    <input type="hidden" id="user" name="user" value="{{ user.id }}">
+    <div class="row">
+        <div class="col-md-1">&nbsp;</div>
+        <div class="col-md-6">
+            {% for player in players %}
+            <div class="{% if forloop.counter|divisibleby:2 %}raceblock1{% else %}raceblock2{% endif %} {% if player == pet %}raceblock0{% else %}{% endif %}">
+                {% if player in records %}
+                <img src="{% static player.apperance.url %}" class="raceplayerend" id="race_{{ player.user.id }}">
+                {% else %}
+                <img src="{% static player.apperance.url %}" class="raceplayer" id="race_{{ player.user.id }}">
+                {% endif %}
+            </div>
+            {% endfor %}
+        </div>
+        <div class="col-md-2">
+            {% for player in players %}
+            {% if player in records %}
+            <h3 class="score" id="score_{{ player.user.id }}">{{ records|keyValue:player|safe }}</h3>
+            {% else %}
+            <h3 class="score" id="score_{{ player.user.id }}"></h3>
+            {% endif %}
+            {% endfor %}
+        </div>
+        <div class="col-md-2">
+            <p>&nbsp;</p>
+            <input type="hidden" id="time" name="time" value="{{ room.game_time.isoformat }}">
+            <h3 class="largeFont text-center"><span id="minute">00</span> : <span id="second">00</span></h3><br>
+            <h3 class="comeonFont text-center">Come on!</h3><br>
+            <h3 class="comeonFont text-center">I wanna WIN!</h3>
+            <img src="{% static pet.apperance.url %} " class="raceself">
+            <center><a href="{% url 'multiIns' %}"><button id="back-btn" class="btnmap hvr-float-shadow"><h4>Back</h4></button></a></center>
+        </div>
+    </div><br><br><br>
+
+    <!--     Game over message -->
+    <div class="modal fade" id="game_over" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content myMod">
+                <div class="modal-header">
+                    <button type="button" class="close game_over_close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Game Over</h4>
+                </div>
+                <div style="margin:10px">Time is up, try again!</div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default game_over_close" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--     Score message -->
+    <div class="modal fade" id="final_score" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content myMod">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Game Over</h4>
+                </div>
+                <div style="margin:10px">Well done! </div>
+                <div style="margin:10px">You earned <span id="coins"></span> coins!!!</div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="/static/js/race.js" type="text/javascript"></script>
+{% endblock %}

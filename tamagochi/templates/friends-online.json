@@ -1,0 +1,8 @@
+{"friends":[
+  {% for friend in friends %}
+  {%spaceless%}
+  {% include 'friend-online.json' %}
+  {%endspaceless%}
+  {% if not forloop.last %},
+  {% endif %}
+  {% endfor %}]}

@@ -1,0 +1,90 @@
+{% extends "marriage/base4.html" %}
+{% load static %}
+<!----------------------------------Love Wall---------------------------------------->
+{% block lovewall %}
+    <div class="row">
+        <div class="col-md-7">
+            <div class="lovewall" id="post-list">
+            </div>
+        </div>
+            <div class="col-md-4">
+              <h4 class="postTitle">Post Here:</h4>
+              <textarea id="post-field" class="postLove" maxlength="42" autofocus placeholder="Say out your LOVE! ❤️" cols="50" rows="4" name = "Post"></textarea>
+              <button id="post-btn"class="postbtn hvr-float-shadow">Post</button>
+                <img src="{% static pet_self.apperance.url %}" class="petself" style="display: inline">
+                <br>
+                <button id="check_marry_status" data-toggle="modal" data-target="#propose_message" class="purposebtn hvr-float-shadow">Propose!</button>
+                <button class="purposebtn hvr-float-shadow" data-toggle="modal" data-target="#mywaitlist">
+                    <p class="faUser" >Love Message(<a id="partner_waitlist_number"></a>)</p></button>
+            </div>
+        </div>
+        <!-- propose_message-->
+         <div class="modal fade" id="propose_message" role="dialog">
+           <div class="modal-dialog">
+
+             <!-- Modal content-->
+             <div class="modal-content myMod">
+               <div class="modal-header">
+                 <button type="button" class="close" data-dismiss="modal">&times;</button>
+                 <h4 class="modal-title">Who do you want to propose to?</h4>
+               </div>
+
+               <div class="modal-body" id="search">
+                 <p>You can only find friends of the other gender here.</p>
+                 <input type="text" id="search-field"/>
+                 <button type="submit" id="search-btn">search</button>
+                 <ul id="search-result" ></ul>
+               </div>
+               <div class="modal-footer">
+                 <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+               </div>
+             </div>
+           </div>
+         </div>
+         <!-- Modal2 mywaitlist -->
+          <div class="modal fade" id="mywaitlist" role="dialog">
+            <div class="modal-dialog">
+
+              <!-- Modal content-->
+              <div class="modal-content myMod">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal">&times;</button>
+                  <h4 class="modal-title">Someone want to marry with you!</h4>
+                </div>
+                <div class="modal-body" >
+                <ul id="waitlist" >
+                </ul>
+
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+         <!-- Modal2 error message -->
+          <div class="modal fade" id="error_message" role="dialog">
+            <div class="modal-dialog">
+
+              <!-- Modal content-->
+              <div class="modal-content myMod">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal">&times;</button>
+                  <h4 class="modal-title">Something wrong happened!</h4>
+                </div>
+                <div class="modal-body" style="margin:10px" id="error_message_text"></div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+              </div>
+
+            </div>
+          </div>
+         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+         <script src="/static/js/marry.js" type="text/javascript"></script>
+         <script src="/static/js/postlist.js" type="text/javascript"></script>
+
+{% endblock %}

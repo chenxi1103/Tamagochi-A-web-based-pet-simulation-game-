@@ -1,0 +1,96 @@
+{% extends "game/base3.html" %}
+{% block title %}Tamagochi: Game Room{% endblock %}
+{% block message %}{% endblock %}
+{% load static %}
+<!---------------------------Game Room-------------------------------->
+{% block gameroom %}
+    <h3 class="roomFont">Racing Room {{ room.id }} &nbsp;&nbsp;&nbsp;&nbsp;<span id="minute">00</span> : <span id="second">00</span></h3>  <a href="#">
+    <h4 class="roomFont1">Click Start When you are ready!</h4>
+    <input type="hidden" id="room" name="room" value="{{ room.id }}">
+    <input type="hidden" id="user" name="user" value="{{ user.id }}">
+    <input type="hidden" id="owner" name="owner" value="{{ room.owner.id }}">
+    <input type="hidden" id="time" name="time" value="{{ room.room_time.isoformat }}">
+    <div class="row">
+    <div class="col-md-4">
+        <img src="{% static pet.apperance.url %}" class="player1">
+        {% if room.owner == pet %}
+            <table>
+                <tr>
+        <td><button id="start-btn" class="btn btnmap hvr-float-shadow player1btn" disabled><h4>Start</h4></button></a></td>
+        <td><button id="invite_player-btn"class="btn btnmap hvr-float-shadow player1btn" data-toggle="modal" data-target="#invite_player"><h4>Invite</h4></button></td></tr>
+                    </table><br><br><br>
+        {% else %}
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <button id="ready-btn" class="btnmap hvr-float-shadow player1btn"><h4>Ready</h4></button></a><br><br><br><br>
+        {% endif %}
+        
+    </div>
+    <div class="col-md-6">
+        <div class="players">
+            <div class="row" id="play_list">
+                {% for guest in guests %}
+                <div class="col-md-3" id="player_{{ guest.user.id }}">
+                    <img src="{% static guest.apperance.url %}" class="playersimg">
+                            <h4 class="playersfont ">Name: {{ guest.name }}</h4>
+                            <h4 class="playersfont player_status " id="status_{{ guest.user.id }}">Status: {{ guest.game_status }}</h4>
+
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+    </div>
+    <!-- invite player-->
+   <div class="modal fade" id="invite_player" role="dialog">
+     <div class="modal-dialog">
+       <!-- Modal content-->
+       <div class="modal-content myMod">
+         <div class="modal-header">
+           <button type="button" class="close" data-dismiss="modal">&times;</button>
+           <h4 class="modal-title">Search online friends</h4>
+         </div>
+         <div id="online_friend_list" style="margin:10px"></div>
+         <div class="modal-footer">
+           <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+         </div>
+       </div>
+
+     </div>
+   </div>
+
+   <!-- message_invitation-->
+    <div class="modal fade" id="message_invitation" role="dialog">
+      <div class="modal-dialog">
+        <!-- Modal content-->
+        <div class="modal-content myMod">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+            <h4 class="modal-title">You have new game invitations!</h4>
+          </div>
+          <div id="invitation_list" style="margin:10px"></div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!--     Time's up message -->
+    <div class="modal fade" id="time_up" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content myMod">
+                <div class="modal-header">
+                    <button type="button" class="close time_up_close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Time's up!</h4>
+                </div>
+                <div style="margin:10px">Some players may leave this room. Open a new room again! </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default time_up_close" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="{% static 'js/invite_game.js' %}"></script>
+    <script src="{% static 'js/gameRoom.js' %}"></script>
+{% endblock %}

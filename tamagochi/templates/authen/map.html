@@ -1,0 +1,52 @@
+{% extends 'authen/base1.html' %}
+{% load static %}
+{% block title %}Tamagochi: Map{% endblock %}
+{% block header1 %}
+<div class="w3-display-top">
+    <header>
+    <div class="row">
+        <h1>&nbsp;</h1><br>
+        <div class="col-md-1">&nbsp;</div>
+        <div class="col-md-6">
+          <h1 class="w3-animate-left hvr-hang">T A M A G O C H I </h1>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          <img class="weather" src="{{weather}}">
+        </div>
+        <div class="col-md-5">
+            <a href="{% url 'map' %}"><button class="btnmap hvr-float-shadow">MAP</button></a>
+            <a href="{% url 'logout' %}"><button class="btnmap hvr-float-shadow">SIGN OUT</button></a>
+            <a href="{% url 'changePwd' %}"><button class="btnchange hvr-float-shadow">CHANGE PASSWORD</button></a>
+        </div>
+        </div>
+    </header>
+</div>
+{% endblock %}
+{% block landingpage %}{% endblock %}
+<!------------------------------ Map ---------------------------------->
+{% block map %}
+    <div class="centerFix">
+        <a href="{% url 'warehouse' %}"> <img class="imgfix" src="{% static 'images/house.jpeg' %}"></a><br>
+        <a href="{% url 'warehouse' %}"> <button class="btnhome hvr-pulse"><h2>Home</h2></button></a>
+    </div>
+    <div class="centerFix">
+        <h1>&nbsp;</h1><br><br>
+        <img class="tamafix center-block" src='{% static pet_self.apperance.url %}'>
+    </div>
+    <div class="centerFix">
+        <a href="{% url 'playCastle' %}"> <img class="imgfix2 center-block" src="{% static 'images/play-castle.jpeg' %}"></a>
+        <a href="{% url 'playCastle' %}"> <button class="btnhome hvr-pulse "><h2>Play Castle</h2></button></a>
+    </div><br>
+
+    <div class="centerFix">
+        <a href="{% url 'store' %}"> <img class="imgfix2 center-block" src="{% static 'images/store.jpeg' %}"></a>
+        <a href="{% url 'store' %}"> <button class="btnhome hvr-pulse "><h2>Store</h2></button></a>
+    </div>
+    <div class="centerFix">
+        <a href="{% url 'lovewall' %}"> <img class="imgfix4 center-block" src="{% static 'images/church.png' %}"></a><br>
+        <a href="{% url 'lovewall' %}"> <button class="btnhome hvr-pulse "><h2>Love Wall</h2></button></a>
+    </div>
+    <div class="centerFix">
+        <p>&nbsp;</p>
+        <a href="{% url 'hospital' %}"> <img class="imgfix3 center-block" src="{% static 'images/hospital.jpeg' %}"><br></a>
+        <a href="{% url 'hospital' %}"> <button class="btnhome hvr-pulse"><h2>Hospital</h2></button><br></a>
+    </div>
+{% endblock %}

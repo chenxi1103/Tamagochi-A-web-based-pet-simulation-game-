@@ -1,0 +1,17 @@
+[Unit]
+Description=daphne daemon
+After=network.target
+
+[Service]
+User=root
+Group=www-data
+WorkingDirectory=/var/www/tamagochi.com
+EnvironmentFile=/var/www/tamagochi.com/envvar
+ExecStart=/var/www/tamagochi.com/venv/bin/daphne --bind 0.0.0.0 --port 9000 --verbosity 0 web.asgi:application
+ExecReload=/bin/kill -s HUP $MAINPID
+ExecStop=/bin/kill -s TERM $MAINPID
+Restart=on-abort
+PrivateTmp=true
+
+[Install]
+WantedBy=multi-user.target

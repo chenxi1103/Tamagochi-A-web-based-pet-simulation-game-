@@ -1,0 +1,67 @@
+{% extends 'authen/base1.html' %}
+{% load static %}
+{% block title %}Tamagochi: SignUp{% endblock %}
+{% block header1 %}{% endblock %}
+{% block message %}{% endblock %}
+<!------------------------------ Register ---------------------------------->
+{% block register %}
+    <div class="w3-display-topmiddle">
+    <h1>&nbsp;</h1><br>
+    <h1 class="w3-animate-left hvr-hang">T A M A G O C H I</h1><br>
+    <h1>&nbsp;</h1>
+</div>
+<div class="w3-display-middle">
+    <h1>&nbsp;</h1><br>
+    <div class="signUpForm container">
+    {% if signup_form.non_field_errors %}
+        {% for error in signup_form.non_field_errors %}
+        <h5 style="color: red">
+        {{ error }}
+        </h5>
+        {% endfor %}
+    {% endif %}
+        {% for field in signup_form %}
+          <!-- {% if field.errors %}
+            {% for error in field.errors %}
+                <h5 class="alert-danger">
+                {{ field.name }}: {{ error }}
+                </h5>
+            {% endfor %}
+          {% endif %}
+        {% endfor %} -->
+        <div class="row">
+            <div class="col-md-2">&nbsp;</div>
+            <div class="col-md-4">
+        <table>
+
+          <form action="{% url 'signup' %}" method="post">
+            <tr>
+                <td><h3 class="text-right">username:&nbsp;&nbsp;&nbsp;</h3></td>
+                <td>{{signup_form.username}}<br></td>
+            </tr><tr><td>&nbsp;</td></tr>
+            <tr>&nbsp;</tr>
+            <tr>
+                <td><h3 class="text-right">Email:&nbsp;&nbsp;&nbsp;</h3></td>
+                <td>{{signup_form.email}}<br></td>
+            </tr><tr><td>&nbsp;</td></tr>
+            <tr>
+                <td><h3 class="text-right">Password:&nbsp;&nbsp;&nbsp;</h3></td>
+                <td>{{signup_form.password}}<br></td>
+            </tr><tr><td>&nbsp;</td></tr>
+            <tr>
+                <td><h3 class="text-right">Confirm:&nbsp;&nbsp;&nbsp;</h3></td>
+                <td>{{signup_form.confirm}}<br></td>
+            </tr>
+            {% csrf_token %}
+        </table><br>
+            </div>
+            <div class="col-md-1">&nbsp;</div>
+        </div>
+        <button class="btnsignUp hvr-wobble-to-top-right" type="submit">SIGN UP</button>
+        <p> <u><a href="{% url 'login' %}">already a member? </a></u></p>
+    </div>
+</div>
+<div style="color:red;margin-bottom: 20px; font-size:30px;" class="w3-display-bottommiddle">
+</div>
+</form>
+{% endblock %}

@@ -1,0 +1,15 @@
+{% extends 'authen/base1.html' %}
+{% block title %}Tamagochi: 404 Error{% endblock %}
+
+{% load static %}
+<!-----------------error massage------------------>
+{% block error %}
+
+    <div class="w3-animate-zoom w3-pale-red"><br>
+    <h4 class="text-center" style="font-size: 42px">Sorry! 404 Not Found :(</h4><br>
+    <h4 class="text-center">Did you try to give me some INVALID value? (╯°Д°）╯︵ /(.□ . \)</h4>
+        <div class="text-center"><img src="{% static 'images/cry.png' %}" class="errorimg"></div>
+         <p class="text-center"><a class="btn btn-info btn-lg text-center" href="{% url 'map' %}" role="button">Click here to GO BACK HOME :)</a></p><br>
+    </div>
+{% endblock %}
+{% block message %}{% endblock %}

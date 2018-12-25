@@ -1,0 +1,21 @@
+{% extends 'authen/base1.html' %}
+{% load static %}
+{% block title %}Tamagochi: LandingPage{% endblock %}
+<!------------------------------ landingpage ---------------------------------->
+{% block landingpage %}
+<div class="w3-display-middle">
+  <h1 class="hvr-hang w3-animate-left">T A M A G O C H I</h1><br><br><br>
+    <div class="row">
+        <div class="col-md-2">&nbsp;</div>
+        <a href="{% url 'login' %}"><div class="col-md-4"><button class="btnlogin hvr-buzz">LOG IN</button></a></div>
+        <a href="{% url 'signup' %}"><div class="col-md-4"><button class="btnsignUp hvr-buzz">SIGN UP</button></a></div>
+        <div class="col-md-2">&nbsp;</div>
+    </div>
+</div>
+{% endblock %}
+{% block header1 %}{% endblock %}
+{% block login %}{% endblock %}
+{% block register %}{% endblock %}
+{% block map %}{% endblock %}
+{% block egg %}{% endblock %}
+{% block message %}{% endblock %}

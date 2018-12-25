@@ -1,0 +1,122 @@
+{% extends "game/base3.html" %}
+{% block title %}Tamagochi: Single Game Instruction{% endblock %}
+{% load static %}
+{% block message %}{% endblock %}
+<!----------------------Multi - Game Instrution page----------------------------->
+{% block multiIns %}
+
+    <div class="row">
+    <div class="col-md-1">&nbsp;</div>
+    <div class="col-md-9">
+            <div class="instruction">
+                <div class="row">
+                    <div class="col-md-1">&nbsp;</div>
+                    <div class="col-md-9">
+                        <h3 class="text-center">Racing Game</h3>
+                        <h4>How to play</h4>
+                        <p>Players click the 'RUN' button to control how fast the pets run. The fastest pet can win the game and PRIZE!
+                        Player can open a room and then invite their online friends. Friends will receive the invitation and join the game.
+                        The room owner can start the game when all players are ready.</p>
+                        <button class="btn-success text-center hvr-buzz" id="check_status" data-toggle="modal" data-target="#status_message"><h5>Start Game !</h5></button>
+
+                        </div>
+
+                    <div class="col-md-2">
+                        <img src="{% static 'images/showcase3.png' %}" class="showcase">
+                    </div>
+                </div>
+            </div>
+        <div class="rank">
+        <div class="row">
+            <div class="col-md-6">
+                <h3 class="rankFont">GLOBAL RANK:</h3>
+            </div>
+            <div class="col-md-6">
+                <h3 class="rankFont">PERSONAL RECORD:</h3>
+            </div>
+        </div>
+
+            <div class='row'>
+		        <div class='col-md-6 rankmargin' >
+                    {% for player in ranking %}
+                        <table class="mytable">
+                            <tr>
+                                <td>
+                                <h4 class="rankFont2">No.{{ forloop.counter }}</h4>
+                                </td>
+                                <td>
+                                    <img src="{% static player.apperance.url %}" class='rankItem2 hvr-bounce-in' style="display: inline">
+                                </td>
+                                <td>
+                                    <p class='wareText'>Name: {{ player.name }}</p>
+                                         <p class='wareTextRed'>Best Time: {{ player.score3 }}s</p>
+                                </td>
+                        </tr>
+                        </table>
+                        <br>
+                    {% endfor %}
+                </div>
+                <div class='col-md-2 rankmargin' >
+                    <img src="{% static pet.apperance.url %}" class='rankItem3 hvr-bounce-in' >
+                </div>
+                <div class='col-md-3 rankmargin'>
+                    <p class='wareText'>Name: {{ pet.name }}</p>
+                    <p class='wareText'>Current Level: {{ pet.level }}</p>
+                    <p class='wareText'>Best Time: {{ pet.score3 }}s</p>
+                </div>
+            </div>
+		</div>
+    </div>
+    </div><br><br>
+    <!-- status_message-->
+     <div class="modal fade" id="status_message" role="dialog">
+       <div class="modal-dialog">
+         <!-- Modal content-->
+         <div class="modal-content myMod">
+           <div class="modal-header">
+             <button type="button" class="close" data-dismiss="modal">&times;</button>
+             <h4 class="modal-title">Status Check</h4>
+           </div>
+           <div id="message_box" style="margin:10px"></div>
+           <div class="modal-footer">
+             <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+           </div>
+         </div>
+
+       </div>
+     </div>
+     <script src="{% static 'js/invite_game.js' %}"></script>
+     <script src="{% static 'js/global_message.js' %}"></script>
+     <!-- message_invitation-->
+      <div class="modal fade" id="message_invitation" role="dialog">
+        <div class="modal-dialog">
+          <!-- Modal content-->
+          <div class="modal-content myMod">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal">&times;</button>
+              <h4 class="modal-title">You have new game invitations!</h4>
+            </div>
+            <div id="invitation_list" style="margin:10px"></div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    <!--     Error message -->
+    <div class="modal fade" id="error_message" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content myMod">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Something wrong happened!</h4>
+                </div>
+                <div style="margin:10px" id="error_message_text"></div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

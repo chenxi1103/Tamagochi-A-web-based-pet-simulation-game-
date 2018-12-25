@@ -1,0 +1,45 @@
+td {
+    width:95px;
+    height:95px;
+    background-color:pink;
+}
+table {
+    margin: 0 auto;
+}
+.hitmousefont{
+    font-family: Abel;
+    font-size: 20px;
+    font-style: normal;
+    color: white;
+    margin: 0px 0px 0px 0px;
+}
+.hitmousebtn{
+    font-family: Abel;
+    font-size: 20px;
+    font-style: normal;
+    height: 40px;
+    width: 140px;
+    border-radius: 20px;
+    background: linear-gradient(to right, #ffffff, #f0f0f0);
+    border: solid;
+    text-decoration: none;
+    margin: 20px 30px 10px 10px;
+}
+.hitmouseshow{
+    width: 95px;
+    height: 95px;
+    margin: -8px 0px 0px 0px;
+}
+.hitmousescore{
+    font-family: Abel;
+    font-size: 16px;
+    font-style: normal;
+}
+.content {
+        width: 960px;
+        margin: 0 auto;
+        text-align: center;
+}
+.mouseblock{
+    margin: 5px 5px 5px 5px;
+}

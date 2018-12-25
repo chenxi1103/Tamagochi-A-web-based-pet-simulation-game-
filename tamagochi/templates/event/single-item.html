@@ -1,0 +1,23 @@
+{% load static %}
+            <div class="shoppingCartList" id="{{ item.name }}">
+                <div class="row">
+                    <div class="col-md-3">
+                        <img src="{% static item.image.url %}" class="shoppingItem hvr-bounce-in">
+                    </div>
+                    <div class="col-md-6">
+                        <p class="wareText">{{ item.name }}</p>
+                        {% if item.health %}
+                        <p class="wareTextRed">+ Health {{ item.health }}</p>
+                        {% endif %}
+                        {% if item.energy %}
+                        <p class="wareTextRed">+ Energy {{ item.energy }}</p>
+                        {% endif %}
+                        {% if item.happiness %}
+                        <p class="wareTextRed">+ Happiness {{ item.happiness }}</p>
+                        {% endif %}
+                    </div>
+                    <div class="col-md-3">
+                        <button class="minusbtn glyphicon glyphicon-minus hvr-bounce-in"></button>
+                    </div>
+                </div>
+            </div>

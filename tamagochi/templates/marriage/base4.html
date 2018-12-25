@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{% block title %}{% endblock %}</title>
+    <!-----Bootstrap-------->
+    <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
+    <!----- W3CSS ----------->
+    <link href="https://www.w3schools.com/w3css/4/w3.css" rel="stylesheet" >
+    <!----- hoverCSS ----------->
+    <link href="{% static 'css/hover-min.css' %}" rel="stylesheet">
+    <!-----SelfDefined CSS------->
+    <link href="{% static 'css/marriage.css' %}" rel="stylesheet">
+    <!------Font1--------->
+    <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Amatic+SC" />
+    <!------Font2--------->
+    <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Indie+Flower" />
+    <!------Font3--------->
+    <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Abel" />
+    <!------JQuery--------->
+    <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+
+</head>
+<body background="{% static 'images/bg8.jpg' %}">
+<!-----------header part-------------->
+
+<div class="w3-display-top">
+    <header>
+        <div class="row">
+            <h1>&nbsp;</h1><br>
+            <div class="col-md-1">&nbsp;</div>
+            <div class="col-md-7">
+                <h1 class="hvr-hang w3-animate-left">T A M A G O C H I </h1>
+            </div>
+            <div class="col-md-4">
+                <a href="{% url 'map' %}"><button class="btnmap hvr-float-shadow">MAP</button></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <a href="{% url 'logout' %}"><button class="btnmap hvr-float-shadow">SIGN OUT</button></a>
+            </div>
+        </div>
+    </header>
+</div>
+
+{% block lovewall %}{% endblock %}

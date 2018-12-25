@@ -1,0 +1,1 @@
+{"id":"{{friend.id}}","html7":"{{friend.html7|safe}}","html6":"{{friend.html6|safe}}" }

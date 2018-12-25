@@ -1,0 +1,17 @@
+{% extends "game/base3.html" %}
+{% load static %}
+{% block title %}Tamagochi: gameMode{% endblock %}
+{% block gameMode %}
+    <div class="row">
+    <div class="col-md-2">&nbsp;</div>
+        <div class="col-md-4">
+            <img src="{% static 'images/sin.png' %}" class="playmodeimg hvr-buzz"><br>
+    <a href="{% url 'singleIns' %}"><button class="btnmap playmodebtn hvr-float-shadow">Single Mode</button></a>&nbsp;
+        </div>
+        <div class="col-md-1">&nbsp;</div>
+        <div class="col-md-4">
+            <img src="{% static 'images/multi.png' %}" class="playmodeimg hvr-buzz" ><br>
+    <a href="{% url 'multiIns' %}"><button class="btnmap playmodebtn hvr-float-shadow">Multi-player</button></a>
+        </div>
+</div>
+{% endblock %}

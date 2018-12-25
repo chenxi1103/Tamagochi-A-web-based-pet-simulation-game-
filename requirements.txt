@@ -1,0 +1,9 @@
+django
+channels
+channels_redis
+gunicorn
+daphne
+mysqlclient
+pillow
+geocoder
+django-ipware
